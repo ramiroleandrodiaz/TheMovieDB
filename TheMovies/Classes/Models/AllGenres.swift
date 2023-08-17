@@ -7,7 +7,7 @@
 
 import Foundation
 
-typealias GenreDict = [Int:String]
+typealias GenreDict = [Int:String]  // Created this dictionary for easy searching and in an efficient way, instead of finding in [Genre] array.
 
 class AllGenres: Codable {
 

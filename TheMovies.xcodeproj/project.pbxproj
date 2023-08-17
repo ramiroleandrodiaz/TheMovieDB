@@ -29,6 +29,11 @@
 		9EC1165A2A899B860062D879 /* TheMoviesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC116592A899B860062D879 /* TheMoviesTests.swift */; };
 		9EC116642A899B860062D879 /* TheMoviesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC116632A899B860062D879 /* TheMoviesUITests.swift */; };
 		9EC116662A899B860062D879 /* TheMoviesUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC116652A899B860062D879 /* TheMoviesUITestsLaunchTests.swift */; };
+		9EC9318D2A8E829E00F9B723 /* SearchShowsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC9318C2A8E829D00F9B723 /* SearchShowsViewController.swift */; };
+		9EC9318F2A8E832700F9B723 /* ShowSearchDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC9318E2A8E832700F9B723 /* ShowSearchDataSource.swift */; };
+		9EC931912A8E834500F9B723 /* ShowSearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC931902A8E834500F9B723 /* ShowSearchCell.swift */; };
+		9EC931932A8E835400F9B723 /* ShowDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC931922A8E835400F9B723 /* ShowDetailViewController.swift */; };
+		9EC931952A8EB2A500F9B723 /* Shows+Collections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC931942A8EB2A500F9B723 /* Shows+Collections.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +79,11 @@
 		9EC1165F2A899B860062D879 /* TheMoviesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TheMoviesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EC116632A899B860062D879 /* TheMoviesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheMoviesUITests.swift; sourceTree = "<group>"; };
 		9EC116652A899B860062D879 /* TheMoviesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheMoviesUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		9EC9318C2A8E829D00F9B723 /* SearchShowsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchShowsViewController.swift; sourceTree = "<group>"; };
+		9EC9318E2A8E832700F9B723 /* ShowSearchDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowSearchDataSource.swift; sourceTree = "<group>"; };
+		9EC931902A8E834500F9B723 /* ShowSearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowSearchCell.swift; sourceTree = "<group>"; };
+		9EC931922A8E835400F9B723 /* ShowDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDetailViewController.swift; sourceTree = "<group>"; };
+		9EC931942A8EB2A500F9B723 /* Shows+Collections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Shows+Collections.swift"; sourceTree = "<group>"; };
 		A29393983391335A1D51E5D5 /* Pods_TheMovies.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TheMovies.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D32599C2027D391774E60866 /* Pods-TheMovies.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheMovies.release.xcconfig"; path = "Target Support Files/Pods-TheMovies/Pods-TheMovies.release.xcconfig"; sourceTree = "<group>"; };
 		DB44EF8249FD546D9B9F8BF7 /* Pods-TheMovies.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheMovies.debug.xcconfig"; path = "Target Support Files/Pods-TheMovies/Pods-TheMovies.debug.xcconfig"; sourceTree = "<group>"; };
@@ -124,12 +134,11 @@
 		9EA74DB82A899D96000DED34 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				9EC931962A8EB2B700F9B723 /* Extensions */,
 				9EA74DCA2A8D785C000DED34 /* Cells */,
 				9EC1164B2A899B860062D879 /* Assets.xcassets */,
 				9EC1164D2A899B860062D879 /* LaunchScreen.storyboard */,
 				9EA74DC42A8AECA7000DED34 /* ShowsConstants.swift */,
-				9EA74DCF2A8D97F2000DED34 /* Shows+UIColor.swift */,
-				9EA74DD92A8E6A59000DED34 /* Shows+UIViewGradient.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -147,6 +156,9 @@
 			children = (
 				9EA74DC62A8AF309000DED34 /* ShowsAndSuscriptionsViewController.swift */,
 				9EA74DCD2A8D7C37000DED34 /* ShowListingDataSource.swift */,
+				9EC9318C2A8E829D00F9B723 /* SearchShowsViewController.swift */,
+				9EC9318E2A8E832700F9B723 /* ShowSearchDataSource.swift */,
+				9EC931922A8E835400F9B723 /* ShowDetailViewController.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -166,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				9EA74DCB2A8D7AF5000DED34 /* ShowListingCell.swift */,
+				9EC931902A8E834500F9B723 /* ShowSearchCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -220,6 +233,16 @@
 				9EC116652A899B860062D879 /* TheMoviesUITestsLaunchTests.swift */,
 			);
 			path = TheMoviesUITests;
+			sourceTree = "<group>";
+		};
+		9EC931962A8EB2B700F9B723 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9EA74DCF2A8D97F2000DED34 /* Shows+UIColor.swift */,
+				9EA74DD92A8E6A59000DED34 /* Shows+UIViewGradient.swift */,
+				9EC931942A8EB2A500F9B723 /* Shows+Collections.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		C9442CB90F17239618356651 /* Frameworks */ = {
@@ -489,10 +512,15 @@
 				9EA74DD22A8DD00D000DED34 /* Genre.swift in Sources */,
 				9EA74DC52A8AECA7000DED34 /* ShowsConstants.swift in Sources */,
 				9EA74DCE2A8D7C37000DED34 /* ShowListingDataSource.swift in Sources */,
+				9EC931932A8E835400F9B723 /* ShowDetailViewController.swift in Sources */,
 				9EA74DC12A8AE751000DED34 /* Show.swift in Sources */,
+				9EC9318F2A8E832700F9B723 /* ShowSearchDataSource.swift in Sources */,
+				9EC931912A8E834500F9B723 /* ShowSearchCell.swift in Sources */,
+				9EC9318D2A8E829E00F9B723 /* SearchShowsViewController.swift in Sources */,
 				9EA74DC32A8AE7A2000DED34 /* NetworkManager.swift in Sources */,
 				9EC116452A899B850062D879 /* SceneDelegate.swift in Sources */,
 				9EA74DD02A8D97F2000DED34 /* Shows+UIColor.swift in Sources */,
+				9EC931952A8EB2A500F9B723 /* Shows+Collections.swift in Sources */,
 				9EA74DC92A8D7229000DED34 /* AllShows.swift in Sources */,
 				9EA74DD42A8DD655000DED34 /* AllGenres.swift in Sources */,
 				9EA74DC72A8AF309000DED34 /* ShowsAndSuscriptionsViewController.swift in Sources */,

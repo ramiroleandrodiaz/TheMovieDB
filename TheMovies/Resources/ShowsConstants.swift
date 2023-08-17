@@ -34,12 +34,17 @@ class ShowsConstants {
             static let tableViewSectionTitle: String = "Top Rated Shows"
         }
         
-        struct MovieDetail {
+        struct ShowDetail {
             static let overview: String = "Overview"
+            static let subscribeButtonTitle: String = "Subscribe"
         }
     }
     
     struct Fonts {
-        static let tableViewSectionHeaderFont = "ProximaNovaSoft-Medium"
+        static let tableViewSectionHeaderFont: UIFont = UIFont(name: "ProximaNovaSoft-Medium", size: 12) ?? UIFont.boldSystemFont(ofSize: 12)
+    }
+    
+    struct Images {
+        static let backIcon = UIImage(named: "BackIcon")!
     }
 }

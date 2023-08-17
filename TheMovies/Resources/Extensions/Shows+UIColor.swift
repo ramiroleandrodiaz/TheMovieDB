@@ -45,4 +45,13 @@ extension UIColor {
     class func darkSlate() -> UIColor {
         return UIColor(hex: "#091920")
     }
+    
+    class func detailBackgroundColor() -> UIColor {
+        return UIColor(hex: "#f0b932")
+    }
+    
+    class func overviewBlack() -> UIColor {
+        return UIColor(hex: "#383838")
+    }
+    
 }

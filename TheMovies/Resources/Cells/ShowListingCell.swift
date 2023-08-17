@@ -19,7 +19,7 @@ class ShowListingCell: UITableViewCell {
         img.clipsToBounds = true
         img.backgroundColor = .slate()
         img.layer.compositingFilter = "luminosityBlendMode"
-        img.alpha = 0.4
+        img.alpha = 0.35
         img.translatesAutoresizingMaskIntoConstraints = false
         return img
     }()
@@ -86,7 +86,8 @@ class ShowListingCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    func configureUI() {
+    func setupConstraints() {
+        self.selectionStyle = .none
         self.backgroundColor = .clear
         self.contentView.addSubview(self.containerView)
         self.containerView.addSubview(self.backgroundImage)
@@ -142,7 +143,7 @@ class ShowListingCell: UITableViewCell {
         if let mainGenreId = genreId {
             if let genreName = allGenres[mainGenreId] {
                 self.genreContainer.isHidden = false
-                self.genreLabel.text = genreName
+                self.genreLabel.text = genreName.uppercased()
             } else {
                 self.genreContainer.isHidden = true
 
@@ -158,7 +159,7 @@ class ShowListingCell: UITableViewCell {
             let urlString = ShowsConstants.NetworkURLs.imageBaseURL + path
             self.backgroundImage.sd_setImage(with: URL(string: urlString))
         }
-        self.configureUI()
+        self.setupConstraints()
     }
 
 }
