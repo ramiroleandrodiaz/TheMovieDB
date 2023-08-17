@@ -31,11 +31,15 @@ class ShowsConstants {
     
     struct Strings {
         struct Main {
-            
+            static let tableViewSectionTitle: String = "Top Rated Shows"
         }
         
         struct MovieDetail {
-            
+            static let overview: String = "Overview"
         }
+    }
+    
+    struct Fonts {
+        static let tableViewSectionHeaderFont = "ProximaNovaSoft-Medium"
     }
 }

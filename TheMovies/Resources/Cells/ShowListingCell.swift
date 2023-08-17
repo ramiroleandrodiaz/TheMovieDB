@@ -19,6 +19,7 @@ class ShowListingCell: UITableViewCell {
         img.clipsToBounds = true
         img.backgroundColor = .slate()
         img.layer.compositingFilter = "luminosityBlendMode"
+        img.alpha = 0.4
         img.translatesAutoresizingMaskIntoConstraints = false
         return img
     }()
@@ -31,6 +32,7 @@ class ShowListingCell: UITableViewCell {
         label.clipsToBounds = true
         label.translatesAutoresizingMaskIntoConstraints = false
         
+        // Shador to properly read text
         label.layer.shadowColor = UIColor.black.cgColor
         label.layer.shadowRadius = 2.0
         label.layer.shadowOpacity = 1.0
@@ -66,6 +68,13 @@ class ShowListingCell: UITableViewCell {
         view.translatesAutoresizingMaskIntoConstraints = false
         view.clipsToBounds = true
         view.backgroundColor = .darkSlate()
+        
+        // View Shadow
+        view.layer.shadowColor = UIColor.black.cgColor
+        view.layer.shadowRadius = 4.0
+        view.layer.shadowOpacity = 1.0
+        view.layer.shadowOffset = CGSize(width: 0, height: 2)
+        view.layer.masksToBounds = false
         return view
     }()
     

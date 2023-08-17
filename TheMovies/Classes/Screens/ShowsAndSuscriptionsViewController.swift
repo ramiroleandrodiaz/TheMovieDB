@@ -21,6 +21,8 @@ class ShowsAndSuscriptionsViewController: UIViewController {
         tableView.register(ShowListingCell.self, forCellReuseIdentifier: ShowListingCell.identifier)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.backgroundColor = .clear
+        tableView.separatorStyle = .none
+        tableView.allowsSelection = false
         tableView.addInfiniteScrolling(actionHandler: {
             DispatchQueue.main.async {
                 tableView.infiniteScrollingView.startAnimating()
@@ -80,5 +82,28 @@ extension ShowsAndSuscriptionsViewController: DataSourceObserver {
 extension ShowsAndSuscriptionsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 196
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        
+        let headerView: UIView = UIView.init(frame: CGRectMake(0, 0, tableView.frame.width, 45))
+        headerView.backgroundColor = UIColor.clear
+
+        let labelView: UILabel = UILabel.init(frame: CGRectMake(20, 0, tableView.frame.width, 12))
+        labelView.text = ShowsConstants.Strings.Main.tableViewSectionTitle
+        labelView.font = UIFont(name: ShowsConstants.Fonts.tableViewSectionHeaderFont, size: 12) ?? UIFont.boldSystemFont(ofSize: 12)
+        labelView.textColor = .white
+        labelView.backgroundColor = .blackTwo()
+        labelView.layer.opacity = 0.56
+        
+        headerView.addSubview(labelView)
+        
+        let labelConstraints = [
+            labelView.leadingAnchor.constraint(equalTo: headerView.leadingAnchor, constant: 15),
+            labelView.centerYAnchor.constraint(equalTo: headerView.centerYAnchor)
+        ]
+        NSLayoutConstraint.activate(labelConstraints)
+        
+        return headerView
     }
 }
