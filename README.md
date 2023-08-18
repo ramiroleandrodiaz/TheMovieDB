@@ -29,4 +29,4 @@ I didn't use localized strings, as for this project does not seem to add much va
 
 - Add Localized Strings
 - Add a First screen to select Shows or Movies and change endpoint depending on selection
-- Maybe add login in the first screen as use watchlist endpoint instead of "locally" subscribing to shows.
+- Maybe add login in the first screen and use watchlist endpoint instead of "locally" subscribing to shows.
