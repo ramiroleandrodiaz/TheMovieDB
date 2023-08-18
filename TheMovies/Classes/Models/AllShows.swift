@@ -8,7 +8,8 @@
 import Foundation
 
 class AllShows: Codable {
-
+    // This is what we first get in the API, the container of shows. Implementing Codable & Decodable to easily parse from JSON
+    
     enum CodingKeys: String, CodingKey {
         case totalPages = "total_pages"
         case totalResults = "total_results"

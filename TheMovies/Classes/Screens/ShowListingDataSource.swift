@@ -9,6 +9,8 @@ import Foundation
 import UIKit
 
 class ShowListingDatasource: NSObject {
+    // This datasource handles the API calls and populates the shows tableview with the data obtained.
+    // In this class we also pre-fetch all the genres at the beggining so we can easily match them later.
     
     weak var observer: DataSourceObserver?
     var shows: [Show]
@@ -25,6 +27,8 @@ class ShowListingDatasource: NSObject {
         self.loadGenres()
         self.loadShows()
     }
+    
+    // MARK: - API Calls
     
     func loadGenres() {
         NetworkManager.shared.getGenres(onSuccess: { [weak self] (fetchedGenres) in
@@ -56,6 +60,8 @@ class ShowListingDatasource: NSObject {
         })
     }
 }
+
+// MARK: - TableView Methods
 
 extension ShowListingDatasource: UITableViewDataSource {
     

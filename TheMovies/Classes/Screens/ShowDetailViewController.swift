@@ -9,8 +9,11 @@ import Foundation
 import UIKit
 
 class ShowDetailViewController: UIViewController {
+    // This view controller displays the detail of the show selected and has a scrollview to properly read the text.
     
     var show: Show?
+    
+    // Lazy vars...
     
     private lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
@@ -114,6 +117,7 @@ class ShowDetailViewController: UIViewController {
     }
     
     private func setupShowInfo() {
+        // Here we setup labels using show data.
         
         if let path = self.show?.backdropPath, !path.isEmpty {
             let urlString = ShowsConstants.NetworkURLs.imageBaseURL + path
@@ -122,7 +126,19 @@ class ShowDetailViewController: UIViewController {
         
         if let path = self.show?.posterPath, !path.isEmpty {
             let urlString = ShowsConstants.NetworkURLs.imageBaseURL + path
-            self.mainPosterImageView.sd_setImage(with: URL(string: urlString))
+            DispatchQueue.main.async {
+                self.mainPosterImageView.activityIndicator.startAnimating()
+            }
+            self.mainPosterImageView.sd_setImage(with: URL(string: urlString)) { [weak self] (image, error, cacheType, imageURL) in
+                guard let self = self, let image = image else { return }
+                let avgColor = image.getAverageColour
+                DispatchQueue.main.async {
+                    if let color = avgColor {
+                        self.view.backgroundColor = color
+                    }
+                    self.mainPosterImageView.activityIndicator.stopAnimating()
+                }
+            }
         }
         
         self.titleLabel.text = self.show?.name
@@ -139,6 +155,8 @@ class ShowDetailViewController: UIViewController {
     func setupUI() {
         self.backButton.setImage(ShowsConstants.Images.backIcon, for: UIControl.State())
     }
+    
+    // MARK: - Layout Constraints
     
     private func setupScrollViewContstraints() {
         self.view.addSubview(scrollView)
@@ -240,6 +258,8 @@ class ShowDetailViewController: UIViewController {
         ]
         NSLayoutConstraint.activate(overviewInfoLabelConstraints)
     }
+    
+    // MARK: - Button Functions
     
     @objc func backButtonPressed() {
         self.navigationController?.popViewController(animated: true)

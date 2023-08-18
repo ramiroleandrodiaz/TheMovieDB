@@ -9,11 +9,14 @@ import Foundation
 import Alamofire
 
 typealias onFailed = (_ message: String?) -> ()
+// On failed typealias is useful to use it as escaping parameters in order to display errors.
 
 class NetworkManager {
+    // Created network manager class to hangle API calls and decouple them from datasources.
     
     static let shared = NetworkManager()
     
+    // TMDB Authorization headers
     fileprivate let headers: HTTPHeaders = [
         "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI5NjIwMmZkZTkzYzcyNzU0NjUwYTdjNmU3MjcyMjJiOSIsInN1YiI6IjY0ZDk2N2FlNjNhYWQyMDExZGYzYmM5NiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.eRYknYiNVX-X4tA464YQ86G0ZQCykh-nhmOcy2gq1mY",
         "Accept": "application/json"

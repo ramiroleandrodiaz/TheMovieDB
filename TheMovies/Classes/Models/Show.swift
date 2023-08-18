@@ -9,7 +9,8 @@ import Foundation
 import UIKit
 
 class Show: Codable {
-
+    // Basic Show Class, implementing codable protocol to easily decode it from JSON
+    
     enum CodingKeys: String, CodingKey {
         case genreIds = "genre_ids"
         case firstAir = "first_air_date"

@@ -7,10 +7,14 @@
 
 import Foundation
 
-typealias GenreDict = [Int:String]  // Created this dictionary for easy searching and in an efficient way, instead of finding in [Genre] array.
+typealias GenreDict = [Int:String]
+// Created this dictionary for easy searching and in an efficient way, instead of finding in [Genre] array.
+// Searching in Dictionanry is similar to searching in hash tables, so its very performant (close to O(1)).
 
 class AllGenres: Codable {
-
+    // This class contains all genres, like all shows is what we get from the API, a collection of genres, and its easily mapped this way.
+    // Also this class maps the array into a dictionary for searching (with genreID as key) purposes.
+    
     enum CodingKeys: String, CodingKey {
         case genres
     }

@@ -8,7 +8,8 @@
 import Foundation
 
 class Genre: Codable {
-
+    // Basic Genre class. Single genre contains id and name. Implementing Codable & Decoding.
+    
     enum CodingKeys: String, CodingKey {
         case id
         case name

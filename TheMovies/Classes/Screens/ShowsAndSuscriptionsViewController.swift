@@ -10,6 +10,7 @@ import UIKit
 import SVPullToRefresh
 
 class ShowsAndSuscriptionsViewController: UIViewController {
+    // Main View controller (root in navigation) that displays shows (top rated) and subscriptions.
     
     private lazy var dataSource: ShowListingDatasource = {
         let datasource = ShowListingDatasource(observer: self)
@@ -50,7 +51,7 @@ class ShowsAndSuscriptionsViewController: UIViewController {
         self.refreshControl.addTarget(self, action: #selector(refreshTableView(_:)), for: .valueChanged)
     }
     
-    // MARK: - Constraints
+    // MARK: - Layout Constraints
     
     func setUpConstraintsAndUI() {
         self.view.backgroundColor = .blackTwo()

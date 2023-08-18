@@ -157,7 +157,14 @@ class ShowListingCell: UITableViewCell {
         self.fillLabels(name: show.name, genreId: show.genreIds?.first, allGenres: genres)
         if let path = show.backdropPath, !path.isEmpty {
             let urlString = ShowsConstants.NetworkURLs.imageBaseURL + path
-            self.backgroundImage.sd_setImage(with: URL(string: urlString))
+            DispatchQueue.main.async {
+                self.backgroundImage.activityIndicator.startAnimating()
+            }
+            self.backgroundImage.sd_setImage(with: URL(string: urlString)) { [weak self] (image, error, cacheType, imageURL) in
+                DispatchQueue.main.async {
+                    self?.backgroundImage.activityIndicator.stopAnimating()
+                }
+            }
         }
         self.setupConstraints()
     }
